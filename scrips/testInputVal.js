@@ -11,4 +11,6 @@ export function inputValTest(val) {
     console.error("Некорректный ввод!");
     return;
   }
+
+  return trimedVal;
 }
