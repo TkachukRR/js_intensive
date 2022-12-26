@@ -25,3 +25,5 @@ Object.prototype[Symbol.iterator] = function () {
 };
 
 export const iterable = {};
+
+//сложность фунции O(n)
