@@ -37,3 +37,5 @@ export function makeObjectDeepCopy(originalObject) {
   });
   return copiedObj;
 }
+
+//сложность фунции O(2^n)
