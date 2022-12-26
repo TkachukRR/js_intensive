@@ -24,3 +24,5 @@ export function selectFromInterval(
       (element <= firstIntervalVal && element >= secondIntervalVal)
   );
 }
+
+// сложность фунции O(n)
