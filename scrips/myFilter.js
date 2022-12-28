@@ -1,9 +1,12 @@
-export function myFilter(cb, thisArr) {
-  let thisArr = this;
+export function addArrayPrototypeProperty(myMethod) {
+  Array.prototype.myFilter = myMethod;
+}
+
+export function myFilter(cb, argObj) {
   const filteredArr = [];
-  for (let i = 0; i < thisArr.length - 1; i++) {
-    if (cb.call(thisArr, thisArr[i], i)) {
-      filteredArr.push(thisArr[i]);
+  for (let i = 0; i < this.length; i++) {
+    if (cb.call(argObj, this[i], i)) {
+      filteredArr.push(this[i]);
     }
   }
   return filteredArr;
