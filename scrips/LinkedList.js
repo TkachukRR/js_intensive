@@ -34,7 +34,10 @@ export class LinkedList {
       return;
     }
     this.data = this.data.slice(0, this.data.length - 1);
-    this.data[this.data.length - 1].next = null;
+
+    if (this.data.length) {
+      this.data[this.data.length - 1].next = null;
+    }
     this.setHeadAndTail();
   }
 
@@ -96,17 +99,19 @@ export class LinkedList {
 
     this.data.splice(index, 1);
 
-    if (index !== 0) {
+    if (index) {
       this.data[index - 1].next = this.data[index];
     }
 
-    if (index === this.data.length + 1) {
+    if (index === this.data.length && this.data.length) {
       this.data[this.data.length - 1].next = null;
     }
+
+    this.setHeadAndTail();
   }
 
   setHeadAndTail() {
-    this._head = this.data[0];
+    this._head = this.data[0] || null;
     this._tail = this.data[this.data.length - 1] || null;
   }
 }
